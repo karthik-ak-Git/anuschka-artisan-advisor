@@ -13,9 +13,19 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const handleProductClick = () => {
+    if (product.url) {
+      window.open(product.url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <div className="group bg-card border border-border rounded-lg p-4 shadow-sm hover:shadow-lg transition-all duration-300 flex-shrink-0 w-64">
-      <div className="aspect-[4/3] mb-4 overflow-hidden rounded-md bg-muted">
+      {/* Clickable Product Image */}
+      <div 
+        className="aspect-[4/3] mb-4 overflow-hidden rounded-md bg-muted cursor-pointer"
+        onClick={handleProductClick}
+      >
         <img
           src={product.image}
           alt={product.title}
@@ -35,13 +45,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <Button 
           variant="luxury" 
           className="w-full"
-          onClick={() => {
-            if (product.url) {
-              window.open(product.url, '_blank');
-            }
-          }}
+          onClick={handleProductClick}
         >
-          View Product
+          Visit Product
         </Button>
       </div>
     </div>
