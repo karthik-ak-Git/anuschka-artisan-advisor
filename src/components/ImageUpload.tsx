@@ -127,52 +127,49 @@ const ImageUpload = () => {
         </div>
       ) : (
         <div className="space-y-6">
-          {/* Uploaded Image */}
-          <div className="relative">
-            <div className="relative bg-card rounded-lg p-4 border border-border">
-              <Button
-                onClick={removeImage}
-                variant="ghost"
-                size="icon"
-                className="absolute top-2 right-2 z-10"
-              >
-                <X className="w-4 h-4" />
-              </Button>
-              
-              <div className="aspect-video max-w-md mx-auto overflow-hidden rounded-md">
-                <img
-                  src={uploadedImage}
-                  alt="Uploaded style inspiration"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            
-            {isAnalyzing && (
-              <div className="absolute inset-0 bg-background/80 rounded-lg flex items-center justify-center">
-                <div className="text-center space-y-3">
-                  <div className="mx-auto w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
-                  <p className="text-sm font-medium text-foreground">
-                    Analyzing your style...
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Results */}
-          {recommendedProducts.length > 0 && !isAnalyzing && (
-            <div className="border-t border-border pt-6">
-              <div className="text-center mb-6">
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                  Perfect Matches Found!
-                </h3>
-                <p className="text-muted-foreground">
-                  Based on your image, these Anuschka pieces would complement your style beautifully.
+          {isAnalyzing ? (
+            <div className="flex-1 flex items-center justify-center py-20">
+              <div className="text-center space-y-4">
+                <div className="mx-auto w-12 h-12 border-3 border-primary border-t-transparent rounded-full animate-spin"></div>
+                <p className="text-lg font-medium text-foreground">
+                  Analyzing your style...
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Finding the perfect Anuschka matches for you
                 </p>
               </div>
-              <ProductCarousel products={recommendedProducts} />
             </div>
+          ) : (
+            <>
+              {/* Small uploaded image thumbnail at top */}
+              <div className="flex items-center gap-3 pb-4 border-b border-border">
+                <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border shadow-sm">
+                  <img
+                    src={uploadedImage}
+                    alt="Your uploaded image"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-display text-lg font-semibold text-foreground">
+                    Your Image:
+                  </h3>
+                  <Button
+                    onClick={removeImage}
+                    variant="ghost"
+                    size="sm"
+                    className="text-muted-foreground hover:text-destructive mt-1"
+                  >
+                    Upload Different Image
+                  </Button>
+                </div>
+              </div>
+
+              {/* Product recommendations */}
+              {recommendedProducts.length > 0 && (
+                <ProductCarousel products={recommendedProducts} />
+              )}
+            </>
           )}
         </div>
       )}

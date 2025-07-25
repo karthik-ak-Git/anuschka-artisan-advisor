@@ -8,20 +8,20 @@ All colors MUST be HSL. Inspired by luxury handbag brand aesthetic with hand-pai
 
 @layer base {
   :root {
-    /* Luxury cream and off-white backgrounds */
-    --background: 38 28% 96%;
+    /* Soft off-white background as specified */
+    --background: 45 25% 97%; /* #FAF9F6 */
     --foreground: 25 20% 15%;
 
     /* Premium card styling */
-    --card: 40 30% 98%;
+    --card: 45 30% 98%;
     --card-foreground: 25 20% 15%;
 
-    --popover: 40 30% 98%;
+    --popover: 45 30% 98%;
     --popover-foreground: 25 20% 15%;
 
-    /* Deep teal primary - jewel tone */
-    --primary: 185 65% 25%;
-    --primary-foreground: 40 30% 98%;
+    /* Deep teal primary as specified */
+    --primary: 180 100% 25%; /* #008080 */
+    --primary-foreground: 45 30% 98%;
 
     /* Soft champagne secondary */
     --secondary: 42 25% 92%;
@@ -33,15 +33,15 @@ All colors MUST be HSL. Inspired by luxury handbag brand aesthetic with hand-pai
 
     /* Rich burgundy accent */
     --accent: 345 65% 35%;
-    --accent-foreground: 40 30% 98%;
+    --accent-foreground: 45 30% 98%;
 
-    /* Golden luxury highlights */
-    --gold: 45 85% 55%;
+    /* Gold highlights as specified */
+    --gold: 51 85% 52%; /* #D4AF37 */
     --gold-foreground: 25 20% 15%;
 
     /* Sapphire blue luxury accent */
     --sapphire: 220 75% 35%;
-    --sapphire-foreground: 40 30% 98%;
+    --sapphire-foreground: 45 30% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 40 30% 98%;
