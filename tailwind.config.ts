@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'display': ['Playfair Display', 'serif'],
+				'body': ['Lato', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -43,6 +47,14 @@ export default {
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))'
+				},
+				gold: {
+					DEFAULT: 'hsl(var(--gold))',
+					foreground: 'hsl(var(--gold-foreground))'
+				},
+				sapphire: {
+					DEFAULT: 'hsl(var(--sapphire))',
+					foreground: 'hsl(var(--sapphire-foreground))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
