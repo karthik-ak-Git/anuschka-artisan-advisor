@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { MessageCircle, Camera } from "lucide-react";
-import ChatInterface from "./ChatInterface";
+import { Sparkles, Camera } from "lucide-react";
+import QuizInterface from "./QuizInterface";
 import ImageUpload from "./ImageUpload";
 
 const AnuschkaStylist = () => {
@@ -29,7 +29,7 @@ const AnuschkaStylist = () => {
                 value="style-advisor" 
                 className="flex items-center gap-2 data-[state=active]:bg-background data-[state=active]:text-foreground font-medium text-base h-12"
               >
-                <MessageCircle className="w-5 h-5" />
+                <Sparkles className="w-5 h-5" />
                 Style Advisor
               </TabsTrigger>
               <TabsTrigger 
@@ -42,7 +42,7 @@ const AnuschkaStylist = () => {
             </TabsList>
             
             <TabsContent value="style-advisor" className="flex-1 m-0 focus-visible:outline-none">
-              <ChatInterface />
+              <QuizInterface />
             </TabsContent>
             
             <TabsContent value="visual-match" className="flex-1 m-0 focus-visible:outline-none">
